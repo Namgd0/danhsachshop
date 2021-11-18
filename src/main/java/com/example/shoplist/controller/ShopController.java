@@ -29,8 +29,8 @@ public class ShopController {
     public String viewlist(Model model) {
         List<ShopDto> shop = shopService.getShopByNameASC();
         List<ShopDto> shopl = shopService.findAllBySelled();
-        model.addAttribute("shops", shop);
-        model.addAttribute("shop", shopl);
+        model.addAttribute("shop", shop);
+        model.addAttribute("shops", shopl);
         return "index";
     }
 

@@ -38,7 +38,7 @@
         </thead>
 
         <tbody>
-        <tr th:each="s : ${shops}">
+        <tr th:each="s : ${shop}">
             <td th:text="${s.shopname}"></td>
             <td th:text="${s.shopaddress}"></td>
             <td th:text="${s.shoptel}" style="text-align: center"></td>
@@ -64,7 +64,7 @@
     </thead>
 
     <tbody>
-    <tr th:each="s : ${shop}">
+    <tr th:each="s : ${shops}">
         <td th:text="${s.shopname}"></td>
         <td th:text="${s.shopaddress}"></td>
         <td th:text="${s.shoptel}" style="text-align: center"></td>
