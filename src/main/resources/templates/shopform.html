@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        th{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container my-2">
+    <h1 style="text-align: center">Danh sách các Shop</h1>
+    <a th:href="@{/}" class="btn btn-primary">Back to homepage</a>
+    <br/>
+    <table border="1" class = "table table-striped table-responsive-md" style="margin-top: 15px">
+
+        <thead>
+        <tr>
+            <th><a>Sản Phẩm</a></th>
+            <th><a>Đơn giá(VNĐ)</a></th>
+            <th><a>Số lượng</a></th>
+            <th><a>Sản phẩm đã bán</a></th>
+            <th><a>Số lượng mua</a></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="product : ${product}">
+            <td th:text="${product.productname}"></td>
+            <td style="text-align: center" th:text="${product.unitprice}"></td>
+            <td style="text-align: center" th:text="${product.quantity}"></td>
+            <td style="text-align: center" th:text="${product.selledquantity}"></td>
+            <td>
+                <input type="number" name="" id="soluong" size="10" th:value="${soluong}" required>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-success" style="float: right">Buy</button>
+</div>
+</body>
+</html>

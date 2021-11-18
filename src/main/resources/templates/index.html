@@ -1,10 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        th{
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-$END$
+<div class="container my-2">
+    <h1 style="text-align: center">Danh sách các Shop</h1>
+
+
+    <br/>
+    <table border="1" class = "table table-striped table-responsive-md">
+        <form th:action="@{/search}" style="margin-top: 20px">
+        <input type="text" name="keyword" id="keyword" size="25" th:value="${keyword}" required>
+        &nbsp;
+        <input type="submit" value="Search">
+        <a th:href="@{/}" class="rightContainer btn btn-secondary" style="float: right">Refresh</a>
+    </form>
+        <thead>
+        <tr>
+            <th><a>Tên shop</a></th>
+            <th><a>Địa chỉ shop</a></th>
+            <th><a>Điện thoại</a></th>
+            <th><a>Mô tả</a></th>
+            <th><a>chi tiết shop</a></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="s : ${shops}">
+            <td th:text="${s.shopname}"></td>
+            <td th:text="${s.shopaddress}"></td>
+            <td th:text="${s.shoptel}" style="text-align: center"></td>
+            <td th:text="${s.shopdesc}"></td>
+            <td style="align-items: center"><a th:href="@{/shopform?id={id}(id=${s.id})}" class="btn btn-success ">Detail</a></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2 style="text-align: center">************************************************************************</h2>
+
+<!--    Danh sách top 100-->
+    <h1  style="text-align: center">Danh sách top 10</h1>
+    <table border="1" class = "table table-striped table-responsive-md" style="margin-top: 25px">
+    <thead>
+    <tr>
+        <th><a>Tên shop</a></th>
+        <th><a>Địa chỉ shop</a></th>
+        <th><a>Điện thoại</a></th>
+        <th><a>Mô tả</a></th>
+        <th><a>Sản phẩm đã bán</a></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="s : ${shop}">
+        <td th:text="${s.shopname}"></td>
+        <td th:text="${s.shopaddress}"></td>
+        <td th:text="${s.shoptel}" style="text-align: center"></td>
+        <td th:text="${s.shopdesc}"></td>
+        <td th:text="${s.totalselledproduct}" style="text-align: center"></td>
+    </tr>
+    </tbody>
+    </table>
+</div>
 </body>
 </html>

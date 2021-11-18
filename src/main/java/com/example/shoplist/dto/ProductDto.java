@@ -7,18 +7,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Data
-public class ShopDto {
+public class ProductDto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String shopname;
+    private String productname;
 
-    private String shopaddress;
+    private String unitprice;
 
-    private String shoptel;
+    private int quantity;
 
-    private String shopdesc;
+    private int selledquantity;
 
-    private int totalselledproduct;
+    private int idshop;
+
 }
