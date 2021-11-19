@@ -2,7 +2,6 @@ package com.example.shoplist.controller;
 
 import com.example.shoplist.dto.ProductDto;
 import com.example.shoplist.dto.ShopDto;
-import com.example.shoplist.model.Product;
 import com.example.shoplist.service.ProductService;
 import com.example.shoplist.service.ShopService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -23,7 +23,8 @@
     </div>
     <br/>
     <form th:object="${p}" th:action="@{/buy}">
-        <a class="btn btn-success" th:href="@{/sortproduct?id={id}(id=${idshop})}">Làm tươi</a>
+        <a class="btn btn-success float-left" style="margin: 10px 0px" th:href="@{/shopform?id={id}(id=${idshop})}">Làm mới</a>
+        <a class="btn btn-success float-right" style="margin: 10px 0px" th:href="@{/sortproduct?id={id}(id=${idshop})}">Sắp xếp theo tên</a>
     <table border="1" class = "table table-striped table-responsive-md" style="margin-top: 15px">
         <thead>
         <tr>
