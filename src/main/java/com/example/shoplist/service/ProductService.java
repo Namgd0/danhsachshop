@@ -41,4 +41,7 @@ public class ProductService {
     public List<ProductDto> findProductByIdshop(Integer id){
         return productMapper.modelstoDtos(productRepository.findProductByIdshop(id));
     }
+    public List<ProductDto> sortProduct(Integer idshop){
+        return productMapper.modelstoDtos(productRepository.findProductByIdshopOrderByProductnameAsc(idshop));
+    }
 }

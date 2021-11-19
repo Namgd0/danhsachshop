@@ -16,6 +16,4 @@ public interface ShopRepository extends JpaRepository<Shop, Integer> {
 
     @Query(value = "select * from shop where totalselledproduct >= 100 order by totalselledproduct DESC limit 10", nativeQuery = true)
     List<Shop> findAllBySelled();
-
-//    List<Shop> findShopBySelledquantity(Integer selledquantity);
 }

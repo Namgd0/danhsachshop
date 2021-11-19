@@ -23,6 +23,7 @@
     </div>
     <br/>
     <form th:object="${p}" th:action="@{/buy}">
+        <a class="btn btn-success" th:href="@{/sortproduct?id={id}(id=${idshop})}">Làm tươi</a>
     <table border="1" class = "table table-striped table-responsive-md" style="margin-top: 15px">
         <thead>
         <tr>
@@ -43,6 +44,7 @@
             <td>
                 <input type="number" name="soluong" id="soluong" size="10" th:value="${soluong}" required>
                 <input type="hidden" name="idshop" id="idshop" size="10" th:value="${idshop}" required>
+                <input type="hidden" name="productid" id="productid" size="10" th:value="${product.id}" required>
             </td>
         </tr>
         </tbody>

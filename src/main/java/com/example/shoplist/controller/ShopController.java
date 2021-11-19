@@ -41,11 +41,4 @@ public class ShopController {
         shop.ifPresent(o -> model.addAttribute("shop", o));
         return "index";
     }
-
-//    @RequestMapping(value = "Buy")
-//    public String BuyProduct(Model model, @RequestParam("selledquantity") Integer selledquantity) {
-//        List<ShopDto> sold = shopService.findShopBySelledquantity();
-//        if()
-//    }
-
 }
